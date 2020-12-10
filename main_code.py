@@ -6,6 +6,17 @@ from pygame.locals import *
 pygame.init() # initialize pygame
 pygame.mixer.init() # initialize mixer module
 
+# set the number of channels and reserve each channel
+pygame.mixer.set_num_channels(8)
+pygame.mixer.set_reserved(0)
+pygame.mixer.set_reserved(1)
+pygame.mixer.set_reserved(2)
+pygame.mixer.set_reserved(3)
+pygame.mixer.set_reserved(4)
+pygame.mixer.set_reserved(5)
+pygame.mixer.set_reserved(6)
+pygame.mixer.set_reserved(7)
+
 # global constants
 black = (0, 0, 0)
 white = (255, 255, 255)
@@ -27,7 +38,7 @@ class SoundObjects:
     metronome = pygame.mixer.Sound("perc-808.wav")
 
     @staticmethod
-    def play_sound(sound_object, duration):
+    def play_sound(sound_object, duration, num):
         """
         This method takes in an argument sound_object, which represents an
         object associated with a certain sound. It plays the sound for a
@@ -39,12 +50,19 @@ class SoundObjects:
 
             duration: An float representing the amount of time the sound plays.
 
+            num: An int representing the channel number.
+
         Returns:
             Plays the sound for a specified amount of time.
         """
-        sound_object.play()
+        pygame.mixer.Channel(num).play(sound_object)
         time.sleep(duration)
-        sound_object.stop()
+        pygame.mixer.Channel(num).stop()
+        #print (pygame.mixer.Channel(num).get_busy)
+        #sound_object.play()
+        #time.sleep(duration)
+        #sound_object.stop()
+        
 
 
 class Display:
@@ -120,25 +138,25 @@ class Controller:
                 return True
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_a:
-                    SoundObjects.play_sound(SoundObjects.cowbell, 0.3)
+                    SoundObjects.play_sound(SoundObjects.cowbell, 0.3, 1)
                     Display.color_change(screen)
                 elif event.key == pygame.K_s:
-                    SoundObjects.play_sound(SoundObjects.hihat, 0.3)
+                    SoundObjects.play_sound(SoundObjects.hihat, 0.3, 2)
                     Display.color_change(screen)
                 elif event.key == pygame.K_d:
-                    SoundObjects.play_sound(SoundObjects.kick, 0.3)
+                    SoundObjects.play_sound(SoundObjects.kick, 0.3, 3)
                     Display.color_change(screen)
                 elif event.key == pygame.K_f:
-                    SoundObjects.play_sound(SoundObjects.openhat, 0.3)
+                    SoundObjects.play_sound(SoundObjects.openhat, 0.3, 4)
                     Display.color_change(screen)
                 elif event.key == pygame.K_g:
-                    SoundObjects.play_sound(SoundObjects.ride, 0.3)
+                    SoundObjects.play_sound(SoundObjects.ride, 0.3, 5)
                     Display.color_change(screen)
                 elif event.key == pygame.K_h:
-                    SoundObjects.play_sound(SoundObjects.snare, 0.3)
+                    SoundObjects.play_sound(SoundObjects.snare, 0.3, 6)
                     Display.color_change(screen)
                 elif event.key == pygame.K_j:
-                    SoundObjects.play_sound(SoundObjects.tom, 0.3)
+                    SoundObjects.play_sound(SoundObjects.tom, 0.3, 7)
                     Display.color_change(screen)
 
         return False
@@ -161,7 +179,7 @@ def main():
 
     while not done:
         # play metronome continuously
-        SoundObjects.play_sound(SoundObjects.metronome, 0.5)
+        SoundObjects.play_sound(SoundObjects.metronome, 0.5, 0)
 
         # process events
         done = controller.process_events(screen)
