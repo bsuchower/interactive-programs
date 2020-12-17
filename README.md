@@ -8,3 +8,5 @@ The Pygame installation instructions can be found [here](https://www.pygame.org/
 To download this project, you can clone the repository by running the command ```git clone https://github.com/bsuchower/interactive-programs.git``` in your command window. Within this repository, the sound files are contained within the ```/sounds``` folder. The ```/review_deliverables``` contains previous code and architecture reviews, and the ```/previous_versions``` folder contains previous versions of the code. To use this project, simply run the ```interactive_drum_machine.py``` file in VSCode or in the command window.
 
 This project will not work within Windows Subsystem for Linux due to complications with the Pygame display and audio handling. It will also have significant sound delays and errors within other virtual machines. I recommend that you run this project within Windows or Linux, without using any kind of virtual machine for best results.
+
+For more about this project, visit my [project website](https://bsuchower.github.io/interactive-programs/).
