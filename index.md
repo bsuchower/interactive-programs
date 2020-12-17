@@ -1,37 +1,36 @@
-## Welcome to GitHub Pages
+# Interactive Drum Machine
+### Becca Suchower
 
-You can use the [editor on GitHub](https://github.com/bsuchower/interactive-programs/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+### Project Goals
+For my project, I wanted to create some kind of virtual instrument, since music and building instruments are passions of mine. I decided to create a virtal drum machine, which loops drum beats based on user input. I had three main goals for this project, listed below:
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+1. Create a looping drum machine with user interaction
+2. Create a color-changing display to accompany the audio
+3. Learn a new library (Pygame) that works with sounds and displays
 
-### Markdown
+### Features
+- **Drum Beats** - Contains sound samples for a cowbell, hi-hat, kick, open hi-hat, ride, snare, and tom (free samples from 99Sounds).
+- **Metronome** - Continuously plays a metronome sound to communicate the beat to the user.
+- **Color Changing Display** - Changes the background of the display to a random color (within a specified RGB color range) with each key press.
+- **User Input and Looping** - Pressing the keys on the home row (A-J) once starts looping the sound, and pressing it a second time stops the current looping.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Installation Instructions
+To run this program, you will first need to install Python and Pygame. The Python installation instructions can be found [here](https://www.python.org/downloads/). Follow the installation for your preferred operating system. This program uses the built in Python libraries *time* and *random*, which are both imported within the code.
 
-```markdown
-Syntax highlighted code block
+The Pygame installation instructions can be found [here](https://www.pygame.org/wiki/GettingStarted), or you can run the command ```py -m pip install -U pygame --user``` in your command window.
 
-# Header 1
-## Header 2
-### Header 3
+### Project Download Links
+To download this project, you can clone the repository by running the command ```git clone https://github.com/bsuchower/interactive-programs.git``` in your command window.
 
-- Bulleted
-- List
+### Project GitHub Page
+My project repository is located at https://github.com/bsuchower/interactive-programs. 
 
-1. Numbered
-2. List
+### About Me
+I'm a mechanical engineering student and current junior at Olin College of Engineering! Olin was founded in 1997 with the mission to reinvent undergraduate engineering education. Our curriculum is interdisciplinary and project-based, and focuses on working in teams beginning in the first semester. This project was completed as a final project for an Olin course called Software Design.
 
-**Bold** and _Italic_ and `Code` text
+My email is bsuchower@olin.edu. Feel free to contact me with any questions about this project! 
 
-[Link](url) and ![Image](src)
-```
+### Attribution
+This project uses open-source drum samples from 99Sounds. This sound library is free to download at https://99sounds.org/drum-samples/.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/bsuchower/interactive-programs/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Pygame's documentation was extremely helpful for this project, and is located at https://www.pygame.org/docs/.
