@@ -3,8 +3,8 @@ import time
 import random
 from pygame.locals import *
 
-pygame.init() # initialize pygame
-pygame.mixer.init() # initialize pygame mixer module
+pygame.init()  # initialize pygame
+pygame.mixer.init()  # initialize pygame mixer module
 
 # initialize global constants
 black = (0, 0, 0)
@@ -12,13 +12,14 @@ white = (255, 255, 255)
 screen_width = 500
 screen_height = 500
 
+
 class SoundObjects:
     """
     This class creates a sound object for each drum sound, using the
     built-in Sound class in Pygame. The list note_keys contains each
     key on the keyboard that can be used to play a sound. Each sound
     object is added to the dictionary called notes, which maps each key
-    to the sound it is supposed to play. 
+    to the sound it is supposed to play.
     """
     note_keys = [K_a, K_s, K_d, K_f, K_g, K_h, K_j]
     notes = {}
@@ -31,7 +32,7 @@ class SoundObjects:
     notes[K_g] = pygame.mixer.Sound("sounds/ride-acoustic02.wav")
     notes[K_h] = pygame.mixer.Sound("sounds/snare-vinyl02.wav")
     notes[K_j] = pygame.mixer.Sound("sounds/tom-acoustic02.wav")
-    metronome  = pygame.mixer.Sound("sounds/perc-808.wav")
+    metronome = pygame.mixer.Sound("sounds/perc-808.wav")
 
     @staticmethod
     def play_sound(sound_object):
@@ -70,7 +71,7 @@ class Display:
         Args:
             screen: An object representing the screen display.
             color: A tuple representing the RGB coordinates. Its default
-            is set to white as the screen initializes.    
+            is set to white as the screen initializes.
         """
         screen.fill(color)
         font = pygame.font.SysFont("tlwgtypewriter", 20)
@@ -183,7 +184,7 @@ def main():
     view = Display()
     sounds = SoundObjects()
     controller = Controller()
-    
+
     # display the screen background
     view.display_background(screen)
 
@@ -198,4 +199,5 @@ def main():
     pygame.quit()
 
 
-if __name__ == '__main__': main()
+if __name__ == '__main__':
+    main()
